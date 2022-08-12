@@ -23,18 +23,42 @@ img {
     height: 100%;
     width: 100%;
 }
-.popur {
+.popup {
     display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     left: 0;
     top: 0;
     width: 480px;
     height: 100%;
     transform: translateX(-200%);
+    transition: transform 0.3s ease-in-out;
     background: #8781c5;
     border-radius: 4px;
+    z-index: 9;
 }
-.popur-close span:after {
+.popup.active {
+    transform: translateX(0);
+}
+.popup-close {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+}
+.popup-close span {
+    display: block;
+    margin-top: 10px;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    transform: rotate(45deg);
+    position: relative;
+}
+.popup-close span:after {
     content: "";
     display: block;
     width: 22px;
@@ -88,13 +112,16 @@ img {
 .container:before {
     content: "";
     display: block;
-    background: url('./../img/SVG/bg.svg') no-repeat center;
+    background: url('./../img/SVG/bg_day.svg') no-repeat center;
     width: 100%;
-    height: 52%;
+    height: 50%;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 0;
+}
+.container.is-night::before {
+    background: url('./../img/SVG/bg_night.svg') no-repeat center;
 }
 .top {
      position: relative;
@@ -116,7 +143,7 @@ img {
     color: #fff;
 }
 .city-title {
-    background: #8781c5;
+    background: #8781c5; /*#2a2650*/
     border-radius: 8px;
     font-weight: 700;
     font-size: 35px;
