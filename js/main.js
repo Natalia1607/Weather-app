@@ -1,4 +1,4 @@
-const link = "http://api.weatherstack.com/current?access_key=3f28eddde2a4b6965b1f9ab43af34942"; //8889d57647145852e079cecbff2427a1
+const link = "https://api.weatherstack.com/current?access_key=3f28eddde2a4b6965b1f9ab43af34942"; //8889d57647145852e079cecbff2427a1
 
 const root = document.getElementById('root');
 const popup = document.getElementById('popup');
